@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PHANTOM · License Keys</title>
+<style>
+:root{color-scheme:dark;--bg:#08080a;--card:rgba(255,255,255,.035);--line:rgba(255,255,255,.09);--tx:#f2f2f3;--mu:#85858e;--g1:#f2f2f3;--g2:#cfcfd4;--ok:#4ade80;--wa:#fbbf24;--rd:#f87171;--fld:#0f0f11;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:radial-gradient(ellipse 80% 40% at 50% 0,#22222a 0,transparent 70%),var(--bg);background-attachment:fixed;color:var(--tx);font-family:"Noto Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.w{max-width:520px;margin:0 auto;padding:24px 16px 56px}
+.hero{text-align:center;padding:8px 0 18px}
+.logo{width:100px;height:auto;filter:drop-shadow(0 0 28px rgba(255,255,255,.28));animation:fl 4s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-6px)}}
+@media(prefers-reduced-motion:reduce){.logo{animation:none}}
+h1{font-size:28px;letter-spacing:.3em;margin:8px 0 2px;padding-left:.3em;font-weight:800}
+.sub{color:var(--mu);font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.st{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:10px;text-align:center}
+.st b{display:block;font-size:22px;font-variant-numeric:tabular-nums}
+.st span{font-size:11px;color:var(--mu)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:14px}
+h2{font-size:14px;margin:0 0 12px;color:var(--g1);font-weight:700}
+.btn{border:0;border-radius:14px;font:inherit;font-weight:700;cursor:pointer;transition:.15s}
+.btn:active{transform:scale(.98)}
+.pri{background:var(--g1);color:#0a0a0b;padding:15px;box-shadow:0 0 24px rgba(255,255,255,.18)}
+.big{width:100%;font-size:17px;margin-bottom:14px}
+.sec{background:#141416;color:var(--tx);border:1px solid var(--line);padding:15px 20px}
+/* modal */
+.ov{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:16px;padding-top:calc(16px + env(safe-area-inset-top,0px));padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+.ov.on{display:flex}
+.md{width:100%;max-width:440px;max-height:100%;overflow-y:auto;background:#0c0c0e;border:1px solid rgba(255,255,255,.2);border-radius:26px;padding:22px;box-shadow:0 0 60px rgba(255,255,255,.08)}
+.mh{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.plus{width:34px;height:34px;border-radius:50%;background:var(--g1);color:#0a0a0b;display:grid;place-items:center;font-size:22px;font-weight:700;line-height:1}
+.mh h3{margin:0;flex:1;font-size:18px;color:var(--g1)}
+.x{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:#141416;color:var(--tx);font-size:18px;cursor:pointer}
+label{display:block;font-size:13px;font-weight:700;color:var(--g1);margin:14px 0 6px}
+label small{color:var(--mu);font-weight:400}
+.f{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--fld);color:var(--tx);font:inherit;font-size:16px;outline:0}
+.f:focus{border-color:var(--g1);box-shadow:0 0 0 3px rgba(255,255,255,.12)}
+select.f{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='20' fill='none' stroke='%237f9189' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 7l4-4 4 4M3 13l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.row{display:flex;gap:8px}
+.row .f:first-child{flex:1}
+.acts{display:flex;gap:10px;margin-top:22px}
+.acts .pri{flex:1}
+/* result */
+.res{display:none;border-color:rgba(74,222,128,.5);background:rgba(74,222,128,.06)}
+.res pre{margin:0 0 10px;max-height:220px;overflow:auto;font:14px/1.7 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-all}
+.tabs{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap}
+.t{padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:none;color:var(--mu);font:inherit;font-size:13px;cursor:pointer}
+.t.on{color:#0a0a0b;background:var(--g1);border-color:var(--g1);font-weight:700}
+.it{border-top:1px solid var(--line);padding:12px 0}
+.it:first-of-type{border-top:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.k{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px;word-break:break-all}
+.b{font-size:12px;padding:2px 10px;border-radius:99px;white-space:nowrap;border:1px solid}
+.b.u{color:var(--ok);border-color:rgba(74,222,128,.5);background:rgba(74,222,128,.08)}
+.b.x{color:var(--wa);border-color:rgba(251,191,36,.5);background:rgba(251,191,36,.08)}
+.m{color:var(--mu);font-size:12px;margin:4px 0 8px}
+.ac{display:flex;gap:6px;flex-wrap:wrap}
+.s{padding:6px 11px;border-radius:8px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--tx);font:inherit;font-size:12px;cursor:pointer}
+.s.del{color:var(--rd);border-color:rgba(248,113,113,.4)}
+.s.sure{background:var(--rd);color:#fff}
+.em{color:var(--mu);text-align:center;padding:22px 0;font-size:14px}
+body.locked .w,body.locked .ov{display:none}
+#login{display:none;min-height:100vh;align-items:center;justify-content:center;padding:24px 16px}
+body.locked #login{display:flex}
+.lg{width:100%;max-width:360px;text-align:center}
+.lg .logo{width:96px}
+.lg h1{font-size:24px}
+.lg .f{margin-bottom:10px;text-align:left}
+.err{color:var(--rd);font-size:13px;min-height:20px;margin-bottom:8px}
+</style>
+</head>
+<body class="locked">
+<div id="login"><div class="lg">
+<svg class="logo" viewBox="0 0 360 400" aria-label="PHANTOM"><path fill="#f2f2f3" d="M0 170C0 60 80 0 180 0S360 60 360 170V397L300 357L240 399L180 357L120 399L60 357L0 397Z"/><path fill="#08080a" d="M42 169L150 189L147 237L95 252L60 237ZM318 169L210 189L213 237L265 252L300 237ZM173 239L155 275H205Z"/><path fill="none" stroke="#08080a" stroke-width="8" stroke-linejoin="round" d="M103 302L130 329L155 310L180 329L205 310L230 329L257 302"/></svg>
+<h1>PHANTOM</h1>
+<div class="sub" style="margin-bottom:18px">เข้าสู่ระบบเพื่อใช้งาน</div>
+<input class="f" id="lu" type="text" placeholder="ชื่อผู้ใช้" autocomplete="username" autocapitalize="none">
+<input class="f" id="lp" type="password" placeholder="รหัสผ่าน" autocomplete="current-password">
+<div class="err" id="lerr"></div>
+<button class="btn pri" style="width:100%" data-a="login">เข้าสู่ระบบ</button>
+</div></div>
+<div class="w">
+  <div class="hero">
+    <svg class="logo" viewBox="0 0 360 400" aria-label="PHANTOM">
+      <path fill="#f2f2f3" d="M0 170C0 60 80 0 180 0S360 60 360 170V397L300 357L240 399L180 357L120 399L60 357L0 397Z"/>
+      <path fill="#08080a" d="M42 169L150 189L147 237L95 252L60 237ZM318 169L210 189L213 237L265 252L300 237ZM173 239L155 275H205Z"/>
+      <path fill="none" stroke="#08080a" stroke-width="8" stroke-linejoin="round" d="M103 302L130 329L155 310L180 329L205 310L230 329L257 302"/>
+    </svg>
+    <h1>PHANTOM</h1>
+    <div class="sub">License Keys</div>
+    <button class="s" data-a="logout" style="margin-top:10px">ออกจากระบบ</button>
+  </div>
+
+  <div class="stats">
+    <div class="st"><b id="s1">0</b><span>ทั้งหมด</span></div>
+    <div class="st"><b id="s2" style="color:var(--ok)">0</b><span>ยังไม่ใช้</span></div>
+    <div class="st"><b id="s3" style="color:var(--wa)">0</b><span>ใช้แล้ว</span></div>
+  </div>
+
+  <button class="btn pri big" data-a="open">＋ สร้างคีย์</button>
+
+  <div class="card res" id="res">
+    <h2 id="resh"></h2>
+    <pre id="resk"></pre>
+    <div class="ac"><button class="s" data-a="copyall">คัดลอกทั้งหมด</button><button class="s" data-a="closeres">ปิด</button></div>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px"><h2 style="margin:0">ประวัติการสร้าง</h2><button class="s del" id="delall" data-a="delall" style="display:none">ปิดใช้งานทั้งหมด</button></div>
+    <div class="tabs" id="tabs"></div>
+    <div id="list"></div>
+  </div>
+</div>
+
+<div class="ov" id="ov">
+  <div class="md" role="dialog" aria-label="สร้าง License Key">
+    <div class="mh"><span class="plus">+</span><h3>สร้าง License Key</h3><button class="x" data-a="close" aria-label="ปิด">✕</button></div>
+    <label for="q">จำนวน</label>
+    <input class="f" id="q" type="number" inputmode="numeric" min="1" max="100" value="1">
+    <label for="md">โหมดเวลา</label>
+    <select class="f" id="md"><option value="preset">Preset (ตัวเลือกสำเร็จรูป)</option><option value="custom">กำหนดเอง</option></select>
+    <label for="age">อายุการใช้งาน</label>
+    <select class="f" id="age"></select>
+    <div class="row" id="cust" style="display:none">
+      <input class="f" id="cu" type="number" inputmode="numeric" min="1" value="1">
+      <select class="f" id="cun" style="width:130px"><option value="1">ชั่วโมง</option><option value="24" selected>วัน</option></select>
+    </div>
+    <label for="note">หมายเหตุ <small>(Optional)</small></label>
+    <input class="f" id="note" type="text" maxlength="60" placeholder="เช่น ลูกค้า A">
+    <div class="acts"><button class="btn pri" data-a="gen">✦ Generate</button><button class="btn sec" data-a="close">ยกเลิก</button></div>
+  </div>
+</div>
+
+<script>
+var DURS=[["6 ชั่วโมง",6],["12 ชั่วโมง",12],["1 วัน",24],["3 วัน",72],["7 วัน",168],["1 เดือน",720],["ถาวร",0]];
+var filter="all",armed=null,keys=[],KEY="keygen_v1",lastKeys=[];
+function $(i){return document.getElementById(i)}
+function load(){try{keys=JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){keys=[]}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(keys))}catch(e){}}
+function gen(){
+  var cs="ABCDEFGHJKLMNPQRSTUVWXYZ23456789",a=new Uint32Array(12);
+  crypto.getRandomValues(a);var s=[];
+  for(var i=0;i<3;i++){var p="";for(var j=0;j<4;j++)p+=cs[a[i*4+j]%cs.length];s.push(p)}
+  return "PHTM-"+s.join("-");
+}
+function label(h){
+  if(h===0)return "ถาวร";
+  for(var i=0;i<DURS.length;i++)if(DURS[i][1]===h)return DURS[i][0];
+  return h%24===0?(h/24)+" วัน":h+" ชั่วโมง";
+}
+function fmt(t){return new Date(t).toLocaleString("th-TH",{dateStyle:"medium",timeStyle:"short"})}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function copy(t,btn){
+  var ok=function(){var o=btn.textContent;btn.textContent="คัดลอกแล้ว ✓";setTimeout(function(){btn.textContent=o},1200)};
+  function fb(){var x=document.createElement("textarea");x.value=t;document.body.appendChild(x);x.select();try{document.execCommand("copy");ok()}catch(e){}document.body.removeChild(x)}
+  try{navigator.clipboard.writeText(t).then(ok,fb)}catch(e){fb()}
+}
+function drawTabs(){
+  var n=keys.filter(function(k){return !k.used}).length;
+  var T=[["all","ทั้งหมด ("+keys.length+")"],["unused","ยังไม่ใช้ ("+n+")"],["used","ใช้แล้ว ("+(keys.length-n)+")"]];
+  $("tabs").innerHTML=T.map(function(t){return '<button class="t'+(filter===t[0]?' on':'')+'" data-f="'+t[0]+'">'+t[1]+'</button>'}).join("");
+}
+function drawList(){
+  var L=keys.filter(function(k){return filter==="all"||(filter==="used"?k.used:!k.used)});
+  if(!L.length){$("list").innerHTML='<div class="em">ยังไม่มีคีย์</div>';return}
+  $("list").innerHTML=L.map(function(k){
+    return '<div class="it"><div class="top"><span class="k">'+esc(k.key)+'</span>'+
+    '<span class="b '+(k.used?'x':'u')+'">'+(k.used?'ใช้งานแล้ว':'ยังไม่ใช้')+'</span></div>'+
+    '<div class="m">'+label(k.hours)+' · สร้างเมื่อ '+fmt(k.created)+(k.used&&k.usedAt?' · ใช้เมื่อ '+fmt(k.usedAt):'')+(k.note?' · 📝 '+esc(k.note):'')+'</div>'+
+    '<div class="ac"><button class="s" data-a="copy" data-id="'+k.id+'">คัดลอก</button>'+
+    ''+
+    '<button class="s del'+(armed===k.id?' sure':'')+'" data-a="del" data-id="'+k.id+'">'+(armed===k.id?'ยืนยันปิดใช้งาน?':'ปิดใช้งาน')+'</button></div></div>'}).join("");
+}
+function draw(){
+  drawTabs();drawList();
+  var n=keys.filter(function(k){return !k.used}).length;
+  refreshAll();$("s1").textContent=keys.length;$("s2").textContent=n;$("s3").textContent=keys.length-n;
+}
+var armedAll=false;
+function refreshAll(){var b=$("delall");b.style.display=keys.length?"":"none";b.textContent=armedAll?"ยืนยันปิดใช้งานทั้งหมด ("+keys.length+")?":"ปิดใช้งานทั้งหมด";b.className="s del"+(armedAll?" sure":"")}
+function fillAge(){
+  $("age").innerHTML=DURS.map(function(d){return '<option value="'+d[1]+'"'+(d[1]===168?' selected':'')+'>'+d[0]+'</option>'}).join("");
+}
+function doGen(){
+  var q=Math.max(1,Math.min(100,parseInt($("q").value,10)||1));
+  var h;
+  if($("md").value==="preset"){h=+$("age").value}
+  else{h=Math.max(1,parseInt($("cu").value,10)||1)*(+$("cun").value)}
+  var note=$("note").value.trim(),seen={},made=[];
+  keys.forEach(function(k){seen[k.key]=1});
+  for(var i=0;i<q;i++){
+    var s;do{s=gen()}while(seen[s]);seen[s]=1;
+    made.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6)+i,key:s,hours:h,created:Date.now(),used:false,usedAt:null,note:note});
+  }
+  keys=made.slice().reverse().concat(keys);save();
+  lastKeys=made.map(function(k){return k.key});
+  $("resh").textContent="สร้างสำเร็จ "+q+" คีย์ · "+label(h);
+  $("resk").textContent=lastKeys.join("\n");
+  $("res").style.display="block";
+  $("ov").classList.remove("on");armed=null;draw();
+  $("res").scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+$("md").addEventListener("change",function(){var c=this.value==="custom";$("cust").style.display=c?"flex":"none";$("age").style.display=c?"none":"";$("age").previousElementSibling.style.display=c?"none":""});
+$("ov").addEventListener("click",function(e){if(e.target===this)this.classList.remove("on")});
+document.addEventListener("click",function(e){
+  var t=e.target.closest("button");if(!t)return;
+  if(t.dataset.a!=="delall"&&armedAll){armedAll=false;refreshAll()}
+  if(t.dataset.f){filter=t.dataset.f;armed=null;draw();return}
+  var a=t.dataset.a;if(!a)return;
+  if(a==="login"){doLogin();return}
+  if(a==="delall"){
+    if(!keys.length)return;
+    if(armedAll){keys=[];lastKeys=[];armed=null;armedAll=false;save();$("res").style.display="none"}else armedAll=true;
+    draw();return}
+  if(a==="logout"){logout();return}
+  if(a==="open"){$("ov").classList.add("on");return}
+  if(a==="close"){$("ov").classList.remove("on");return}
+  if(a==="gen"){doGen();return}
+  if(a==="copyall"){copy(lastKeys.join("\n"),t);return}
+  if(a==="closeres"){$("res").style.display="none";return}
+  var id=t.dataset.id,k=keys.filter(function(x){return x.id===id})[0];if(!k)return;
+  if(a==="copy"){copy(k.key,t)}
+  else if(a==="tog"){k.used=!k.used;k.usedAt=k.used?Date.now():null;armed=null;save();draw()}
+  else if(a==="del"){
+    if(armed===id){keys=keys.filter(function(x){return x.id!==id});armed=null;save()}else armed=id;
+    draw()}
+});
+var HASH="0de10441fc417db879db7b360c5a848ec3d7a6726ea978d4c25a6990d4571eb6",AUTH="phantom_auth";
+function sha(s){
+  return crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)).then(function(b){
+    return Array.prototype.map.call(new Uint8Array(b),function(x){return("0"+x.toString(16)).slice(-2)}).join("")})
+}
+function unlock(){document.body.classList.remove("locked")}
+function logout(){try{sessionStorage.removeItem(AUTH)}catch(e){}$("lp").value="";$("ov").classList.remove("on");document.body.classList.add("locked")}
+function doLogin(){
+  var u=$("lu").value.trim().toLowerCase(),p=$("lp").value;
+  sha("phantom|"+u+"|"+p).then(function(h){
+    if(h===HASH){try{sessionStorage.setItem(AUTH,HASH)}catch(e){}$("lerr").textContent="";$("lp").value="";unlock()}
+    else{$("lerr").textContent="ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"}
+  },function(){$("lerr").textContent="ไม่สามารถตรวจสอบได้ในเบราว์เซอร์นี้"});
+}
+["lu","lp"].forEach(function(i){$(i).addEventListener("keydown",function(e){if(e.key==="Enter")doLogin()})});
+try{if(sessionStorage.getItem(AUTH)===HASH)unlock()}catch(e){}
+fillAge();load();draw();
+</script>
+</body>
+</html>
