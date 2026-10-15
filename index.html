@@ -72,6 +72,9 @@ body.locked #login{display:flex}
 .lg h1{font-size:24px}
 .lg .f{margin-bottom:10px;text-align:left}
 .err{color:var(--rd);font-size:13px;min-height:20px;margin-bottom:8px}
+.spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(10,10,11,.25);border-top-color:#0a0a0b;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-3px;margin-right:8px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.btn:disabled{opacity:.85;cursor:wait}
 </style>
 </head>
 <body class="locked">
@@ -82,7 +85,7 @@ body.locked #login{display:flex}
 <input class="f" id="lu" type="text" placeholder="ชื่อผู้ใช้" autocomplete="username" autocapitalize="none">
 <input class="f" id="lp" type="password" placeholder="รหัสผ่าน" autocomplete="current-password">
 <div class="err" id="lerr"></div>
-<button class="btn pri" style="width:100%" data-a="login">เข้าสู่ระบบ</button>
+<button class="btn pri" id="lbtn" style="width:100%" data-a="login">เข้าสู่ระบบ</button>
 </div></div>
 <div class="w">
   <div class="hero">
@@ -231,20 +234,25 @@ document.addEventListener("click",function(e){
     draw()}
 });
 var HASH="abe4cd754986e0e5dd8c70d2ac2f726d4d7ef0ea5dd9e9734d116f22105d2ec2",AUTH="phantom_auth";
-
-
 function sha(s){
   return crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)).then(function(b){
     return Array.prototype.map.call(new Uint8Array(b),function(x){return("0"+x.toString(16)).slice(-2)}).join("")})
 }
 function unlock(){document.body.classList.remove("locked")}
 function logout(){try{sessionStorage.removeItem(AUTH)}catch(e){}$("lp").value="";$("ov").classList.remove("on");document.body.classList.add("locked")}
+var busy=false;
 function doLogin(){
+  if(busy)return;busy=true;
+  var b=$("lbtn");b.innerHTML='<span class="spin"></span>กำลังตรวจสอบ...';b.disabled=true;$("lerr").textContent="";
+  setTimeout(function(){realLogin(function(){busy=false;b.disabled=false;b.textContent="เข้าสู่ระบบ"})},1300);
+}
+function realLogin(done){
+  if(!(window.crypto&&crypto.subtle)){$("lerr").textContent="ไม่สามารถตรวจสอบได้ในเบราว์เซอร์นี้";done();return}
   var u=$("lu").value.trim().toLowerCase(),p=$("lp").value;
   sha("phantom|"+u+"|"+p).then(function(h){
     if(h===HASH){try{sessionStorage.setItem(AUTH,HASH)}catch(e){}$("lerr").textContent="";$("lp").value="";unlock()}
     else{$("lerr").textContent="ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"}
-  },function(){$("lerr").textContent="ไม่สามารถตรวจสอบได้ในเบราว์เซอร์นี้"});
+  },function(){$("lerr").textContent="ไม่สามารถตรวจสอบได้ในเบราว์เซอร์นี้"}).then(done,done);
 }
 ["lu","lp"].forEach(function(i){$(i).addEventListener("keydown",function(e){if(e.key==="Enter")doLogin()})});
 try{if(sessionStorage.getItem(AUTH)===HASH)unlock()}catch(e){}
