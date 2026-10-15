@@ -230,7 +230,8 @@ document.addEventListener("click",function(e){
     if(armed===id){keys=keys.filter(function(x){return x.id!==id});armed=null;save()}else armed=id;
     draw()}
 });
-var HASH="0de10441fc417db879db7b360c5a848ec3d7a6726ea978d4c25a6990d4571eb6",AUTH="phantom_auth";
+var HASH="890dac76815dcc1dd94de536bb37aa322aedb5396e590fea57bae340ce44693a",AUTH="phantom_auth";
+
 function sha(s){
   return crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)).then(function(b){
     return Array.prototype.map.call(new Uint8Array(b),function(x){return("0"+x.toString(16)).slice(-2)}).join("")})
