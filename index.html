@@ -230,7 +230,8 @@ document.addEventListener("click",function(e){
     if(armed===id){keys=keys.filter(function(x){return x.id!==id});armed=null;save()}else armed=id;
     draw()}
 });
-var HASH="890dac76815dcc1dd94de536bb37aa322aedb5396e590fea57bae340ce44693a",AUTH="phantom_auth";
+var HASH="abe4cd754986e0e5dd8c70d2ac2f726d4d7ef0ea5dd9e9734d116f22105d2ec2",AUTH="phantom_auth";
+
 
 function sha(s){
   return crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)).then(function(b){
